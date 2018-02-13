@@ -18,3 +18,13 @@ cd glysh-docker
 ## Run
 docker-compose up
 ```
+
+<!--
+mechanic add api-test --host=api-test.gly.sh --backends=3001 --https=true --redirect-to-https=true
+mechanic add core-test --host=core-test.gly.sh --backends=4001 --https=true --redirect-to-https=true
+mechanic add horizon-test --host=horizon-test.gly.sh --backends=5001 --https=true --redirect-to-https=true
+
+mechanic add api --host=api.gly.sh --backends=3000 --https=true --redirect-to-https=true
+mechanic add core --host=core.gly.sh --backends=4000 --https=true --redirect-to-https=true
+mechanic add horizon --host=horizon.gly.sh --backends=5000 --https=true --redirect-to-https=true
+-->
