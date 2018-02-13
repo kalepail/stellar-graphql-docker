@@ -5,7 +5,7 @@ services:
   ### TEST GROUP
   ###
   stellar-test:
-    image: stellar/quickstart
+    image: stellar/quickstart:testing
     environment:
       - NETWORK=testnet
       - POSTGRES_PASSWORD=$TESTNET_PASS
@@ -53,7 +53,7 @@ services:
   ### LIVE GROUP
   ###
   stellar:
-    image: stellar/quickstart
+    image: stellar/quickstart:testing
     environment:
       - NETWORK=pubnet
       - POSTGRES_PASSWORD=$PUBNET_PASS
