@@ -7,7 +7,7 @@ services:
   stellar-test:
     image: stellar/quickstart
     environment:
-      - testnet
+      - NETWORK=testnet
       - POSTGRES_PASSWORD=$TESTNET_PASS
     volumes:
       - ./opt/stellar-test:/opt/stellar
@@ -55,7 +55,7 @@ services:
   stellar:
     image: stellar/quickstart
     environment:
-      - pubnet
+      - NETWORK=pubnet
       - POSTGRES_PASSWORD=$PUBNET_PASS
     volumes:
       - ./opt/stellar:/opt/stellar
