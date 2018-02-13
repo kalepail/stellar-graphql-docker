@@ -1,0 +1,91 @@
+version: "3"
+
+services:
+
+  # TEST GROUP
+  stellar-test:
+    image: stellar/quickstart
+    environment:
+      - testnet
+      - POSTGRES_PASSWORD=x3Vx9ZY755BXWO1Ca2n1uji56nviOw
+    volumes:
+      - ./opt/stellar-test:/opt/stellar
+    ports:
+      - 3001:8000
+
+  postgraphile-core-test:
+    build: ./postgraphile
+    # image: tyvdh/postgraphile
+    environment:
+      WAIT_HOSTS: stellar-test:5432
+      WAIT_AFTER_HOSTS: 10
+      USER: stellar
+      PASS: x3Vx9ZY755BXWO1Ca2n1uji56nviOw
+      HOST: stellar-test
+      PORT: 5432
+      DB: core
+    ports:
+      - 4001:5000
+    depends_on: 
+      - 'stellar-test'
+
+  postgraphile-horizon-test:
+    build: ./postgraphile
+    # image: tyvdh/postgraphile
+    environment:
+      WAIT_HOSTS: stellar-test:5432
+      WAIT_AFTER_HOSTS: 10
+      USER: stellar
+      PASS: x3Vx9ZY755BXWO1Ca2n1uji56nviOw
+      HOST: stellar-test
+      PORT: 5432
+      DB: horizon
+    ports:
+      - 5001:5000
+    depends_on: 
+      - 'stellar-test'
+  # END TEST GROUP
+
+  # LIVE GROUP
+  stellar:
+    image: stellar/quickstart
+    environment:
+      - pubnet
+      - POSTGRES_PASSWORD=9NSFM3Ekv1z8cP4u4z716DS4qVMICP
+    volumes:
+      - ./opt/stellar:/opt/stellar
+    ports:
+      - 3000:8000
+
+  postgraphile-core:
+    build: ./postgraphile
+    # image: tyvdh/postgraphile
+    environment:
+      WAIT_HOSTS: stellar:5432
+      WAIT_AFTER_HOSTS: 10
+      USER: stellar
+      PASS: 9NSFM3Ekv1z8cP4u4z716DS4qVMICP
+      HOST: stellar
+      PORT: 5432
+      DB: core
+    ports:
+      - 4000:5000
+    depends_on: 
+      - 'stellar'
+
+  postgraphile-horizon:
+    build: ./postgraphile
+    # image: tyvdh/postgraphile
+    environment:
+      WAIT_HOSTS: stellar:5432
+      WAIT_AFTER_HOSTS: 10
+      USER: stellar
+      PASS: 9NSFM3Ekv1z8cP4u4z716DS4qVMICP
+      HOST: stellar
+      PORT: 5432
+      DB: horizon
+    ports:
+      - 5000:5000
+    depends_on: 
+      - 'stellar'
+  # END LIVE GROUP
