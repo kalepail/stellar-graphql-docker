@@ -39,7 +39,7 @@ services:
       WAIT_BEFORE_HOSTS: 10
       WAIT_AFTER_HOSTS: 10
       USER: stellar
-      PASS: ${TESTNET_PASS}
+      PASS: $TESTNET_PASS
       HOST: stellar-test
       PORT: 5432
       DB: horizon
