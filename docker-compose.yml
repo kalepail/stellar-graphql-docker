@@ -19,6 +19,7 @@ services:
     image: tyvdh/postgraphile
     environment:
       WAIT_HOSTS: stellar-test:5432
+      WAIT_BEFORE_HOSTS: 10
       WAIT_AFTER_HOSTS: 10
       USER: stellar
       PASS: $TESTNET_PASS
@@ -35,6 +36,7 @@ services:
     image: tyvdh/postgraphile
     environment:
       WAIT_HOSTS: stellar-test:5432
+      WAIT_BEFORE_HOSTS: 10
       WAIT_AFTER_HOSTS: 10
       USER: stellar
       PASS: ${TESTNET_PASS}
@@ -65,6 +67,7 @@ services:
     image: tyvdh/postgraphile
     environment:
       WAIT_HOSTS: stellar:5432
+      WAIT_BEFORE_HOSTS: 10
       WAIT_AFTER_HOSTS: 10
       USER: stellar
       PASS: $PUBNET_PASS
@@ -81,6 +84,7 @@ services:
     image: tyvdh/postgraphile
     environment:
       WAIT_HOSTS: stellar:5432
+      WAIT_BEFORE_HOSTS: 10
       WAIT_AFTER_HOSTS: 10
       USER: stellar
       PASS: $PUBNET_PASS
