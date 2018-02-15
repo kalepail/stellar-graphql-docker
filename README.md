@@ -1,12 +1,12 @@
 # Stellar to GraphQL
 
-Medium Article:
+Medium Article:  
 https://medium.com/@tyvdh/building-stellar-apps-36303d0e6f45
 
-Video Tutorials:
-https://www.youtube.com/watch?v=qO1GhY3UeR8
-https://www.youtube.com/watch?v=FdcTz3B-PH4
-https://www.youtube.com/watch?v=8AnjmzTgry0
+Video Tutorials:  
+https://www.youtube.com/watch?v=qO1GhY3UeR8   
+https://www.youtube.com/watch?v=FdcTz3B-PH4   
+https://www.youtube.com/watch?v=8AnjmzTgry0  
 
 ## "Quick" Start
 
