@@ -1,6 +1,5 @@
-/opt
 .env
-postgraphile
-*.cert
-*.key
-*.conf
+
+/opt
+/postgraphile
+/private
