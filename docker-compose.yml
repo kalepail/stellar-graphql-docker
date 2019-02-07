@@ -10,6 +10,7 @@ services:
     environment:
       - NETWORK=testnet
       - POSTGRES_PASSWORD=$TESTNET_PASS
+      - ENABLE_ASSET_STATS=true
     volumes:
       - ./opt/stellar-test:/opt/stellar
     ports:
@@ -61,6 +62,7 @@ services:
     environment:
       - NETWORK=pubnet
       - POSTGRES_PASSWORD=$PUBNET_PASS
+      - ENABLE_ASSET_STATS=true
     volumes:
       - ./opt/stellar:/opt/stellar
     ports:
